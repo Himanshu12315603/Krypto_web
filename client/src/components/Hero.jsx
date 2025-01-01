@@ -122,60 +122,20 @@ const Welcome = () => {
             </div>
           </div>
 
-          <div className="p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism">
+          <div className="p-5 text-base sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism">
 
-          <Input placeholder="Address To" name="addressTo" type="text" handleChange={()=>{}} />
-            <Input placeholder="Amount (ETH)" name="amount" type="number" handleChange={()=>{}} />
-            <Input placeholder="Keyword (Gif)" name="keyword" type="text" handleChange={()=>{}} />
-            <Input placeholder="Enter Message" name="message" type="text" handleChange={()=>{}} />
+            <Input placeholder="Address To" name="addressTo" type="text" handleChange={() => { }} />
+            <Input placeholder="Amount (ETH)" name="amount" type="number" handleChange={() => { }} />
+            <Input placeholder="Keyword (Gif)" name="keyword" type="text" handleChange={() => { }} />
+            <Input placeholder="Enter Message" name="message" type="text" handleChange={() => { }} />
 
             <div className="h-[1px] w-full bg-gray-400 my-2" />
             <button
               type="button"
               onClick={handleSubmit}
-              className="group w-full mt-2 relative inline-flex overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+              className="relative text-base w-full mt-3 justify-center inline-flex items-center gap-2 px-6 py-3 font-semibold text-blue-50 bg-gradient-to-tr from-blue-900/30 via-blue-900/70 to-blue-900/30 ring-4 ring-blue-900/20 rounded-full overflow-hidden hover:opacity-90 transition-opacity before:absolute before:top-4 before:left-1/2 before:-translate-x-1/2 before:w-[100px] before:h-[100px] before:rounded-full before:bg-gradient-to-b before:from-blue-50/10 before:blur-xl"
             >
-              <span
-                className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-gradient-to-r from-pink-600 via-purple-400 to-blue-600"
-              ></span>
-
-              <span
-                className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-8 py-3 text-sm font-medium backdrop-blur-3xl transition-all duration-300 group-hover:bg-slate-950/90"
-              >
-                <svg
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="mr-2 h-5 w-5 text-pink-500 transition-transform duration-300 group-hover:-translate-x-1"
-                >
-                  <path
-                    d="M11 19l-7-7 7-7m8 14l-7-7 7-7"
-                    stroke-width="2"
-                    stroke-linejoin="round"
-                    stroke-linecap="round"
-                  ></path>
-                </svg>
-
-                <span
-                  className="relative bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent font-semibold"
-                >
-                  Send now
-                </span>
-
-                <svg
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="ml-2 h-5 w-5 text-blue-500 transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  <path
-                    d="M13 5l7 7-7 7M5 5l7 7-7 7"
-                    stroke-width="2"
-                    stroke-linejoin="round"
-                    stroke-linecap="round"
-                  ></path>
-                </svg>
-              </span>
+              Send now
             </button>
           </div>
         </div>
