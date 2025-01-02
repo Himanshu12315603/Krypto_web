@@ -20,11 +20,9 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
 
 const Welcome = () => {
 
-  const connectWallet = () => {
-    console.log('Connect Wallet');
-  };
+  const connectWallet = () => {};
 
-  const handleSubmit = () => { }
+  const handleSubmit = () => {};
 
   return (
     <div className="flex w-full justify-center items-center">
@@ -103,7 +101,8 @@ const Welcome = () => {
 
         {/* Right Part */}
         <div className="flex flex-col flex-1 items-center justify-start w-full  md:mt-0">
-          <div className="p-3 flex justify-end items-start flex-col rounded-xl sm:mt-1 h-40 sm:w-72 w-full my-5 eth-card .white-glassmorphism ">
+          <div className="p-3 flex justify-end items-start flex-col rounded-xl sm:mt-1 h-40 sm:w-72
+           w-full my-5 eth-card .white-glassmorphism ">
             <div className="flex justify-between flex-col w-full h-full">
               <div className="flex justify-between items-start">
                 <div className="w-10 h-10 rounded-full border-2 border-white flex justify-center items-center">
@@ -130,6 +129,11 @@ const Welcome = () => {
             <Input placeholder="Enter Message" name="message" type="text" handleChange={() => { }} />
 
             <div className="h-[1px] w-full bg-gray-400 my-2" />
+
+            {false ? (
+              <Loader/>
+            ):(
+
             <button
               type="button"
               onClick={handleSubmit}
@@ -137,6 +141,7 @@ const Welcome = () => {
             >
               Send now
             </button>
+            )}
           </div>
         </div>
       </div>
