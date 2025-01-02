@@ -30,7 +30,7 @@ This is a **Web 3.0 Blockchain Application** built using modern web development 
 ## 📷 Screenshots
 
 ### Home Screen
-![Home Screen]("https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/erldlvnqednk28s103dx")
+![Home Screen](https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/erldlvnqednk28s103dx)
 
 ### Wallet Connection
 ![Wallet Connection](path-to-screenshot/wallet-connection.png)
