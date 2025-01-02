@@ -44,3 +44,7 @@ Follow these steps to set up the project on your local system:
    ```bash
    git clone https://github.com/your-username/krypt-blockchain-app.git
    cd krypt-blockchain-app
+
+🌐 Live Demo
+
+Check out the live demo: https://krypto-pi.vercel.app/
