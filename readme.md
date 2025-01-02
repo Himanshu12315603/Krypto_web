@@ -61,3 +61,4 @@ Special thanks to the Web 3.0 community and all contributors for making blockcha
 📜 License
 
 This project is licensed under Swarup Chanda.
+All Rights Reserved to Swarup Chanda 2025
