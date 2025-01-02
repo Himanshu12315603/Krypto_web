@@ -17,3 +17,4 @@ async function main() {
       process.exit(1);
     });
   
+//Contract address: 0x7c85465f24310B659698085C6b16631Ca2231daB
