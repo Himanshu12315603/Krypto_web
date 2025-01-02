@@ -2,6 +2,9 @@
 
 This is a **Web 3.0 Blockchain Application** built using modern web development technologies and blockchain methodologies. This project demonstrates how to build a fully functional Web 3.0 application from start to finish, leveraging **Solidity**, **Metamask**, and **React**.
 
+### Home Screen
+![Home Screen](https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/erldlvnqednk28s103dx)
+
 ---
 
 ## 🌟 Features
@@ -24,19 +27,6 @@ This is a **Web 3.0 Blockchain Application** built using modern web development 
 - **Solidity** for writing smart contracts.
 - **Metamask** integration for blockchain interactions.
 - **Web3.js** or **Ethers.js** for connecting with Ethereum blockchain.
-
----
-
-## 📷 Screenshots
-
-### Home Screen
-![Home Screen](https://res.cloudinary.com/dagggqd6g/image/upload/f_auto,q_auto/erldlvnqednk28s103dx)
-
-### Wallet Connection
-![Wallet Connection](path-to-screenshot/wallet-connection.png)
-
-### Transaction Form
-![Transaction Form](path-to-screenshot/transaction-form.png)
 
 ---
 
