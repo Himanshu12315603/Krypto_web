@@ -1,8 +1,5 @@
-import  {  useState } from "react";
-import { contractABI, contractAddress } from "../utils/constants";
-import { ethers } from "ethers";
-// import { TransactionContext } from "../context/TransactionContext";
-
+import { useContext } from "react";
+import { TransactionContext } from "../context/TransactionContext";
 import useFetch from "../hooks/useFetch";
 import dummyData from "../utils/dummyData";
 import { shortenAddress } from "../utils/shortenAddress";
@@ -11,86 +8,59 @@ const TransactionsCard = ({ addressTo, addressFrom, timestamp, message, keyword,
   const gifUrl = useFetch({ keyword });
 
   return (
-    <div className="bg-[#181918] m-4 flex flex-1
+    <div
+      className="bg-gradient-to-b from-gray-800 via-gray-900 to-black m-4 flex flex-1
       2xl:min-w-[450px]
       2xl:max-w-[500px]
       sm:min-w-[270px]
       sm:max-w-[300px]
       min-w-full
-      flex-col p-3 rounded-md hover:shadow-2xl"
+      flex-col p-4 rounded-lg hover:shadow-2xl transition-shadow duration-300"
     >
       <div className="flex flex-col items-center w-full mt-3">
-        <div className="display-flex justify-start w-full mb-6 p-2">
-          <a href={`https://ropsten.etherscan.io/address/${addressFrom}`} target="_blank" rel="noreferrer">
-            <p className="text-white text-base">From: {shortenAddress(addressFrom)}</p>
+        {/* Transaction Details */}
+        <div className="w-full mb-6 p-3 rounded-lg bg-gray-700/50">
+          <a
+            href={`https://ropsten.etherscan.io/address/${addressFrom}`}
+            target="_blank"
+            rel="noreferrer"
+            className="block text-white text-sm hover:text-blue-400 transition"
+          >
+            From: {shortenAddress(addressFrom)}
           </a>
-          <a href={`https://ropsten.etherscan.io/address/${addressTo}`} target="_blank" rel="noreferrer">
-            <p className="text-white text-base">To: {shortenAddress(addressTo)}</p>
+          <a
+            href={`https://ropsten.etherscan.io/address/${addressTo}`}
+            target="_blank"
+            rel="noreferrer"
+            className="block text-white text-sm hover:text-blue-400 transition"
+          >
+            To: {shortenAddress(addressTo)}
           </a>
-          <p className="text-white text-base">Amount: {amount} ETH</p>
+          <p className="text-white text-sm mt-2">Amount: <span className="text-green-400 font-medium">{amount} ETH</span></p>
           {message && (
-            <>
-              <br />
-              <p className="text-white text-base">Message: {message}</p>
-            </>
+            <p className="text-white text-sm mt-2">Message: <span className="italic">{message}</span></p>
           )}
         </div>
+
+        {/* GIF/Image */}
         <img
           src={gifUrl || url}
-          alt="nature"
-          className="w-full h-64 2xl:h-96 rounded-md shadow-lg object-cover"
+          alt="Transaction GIF"
+          className="w-full h-64 2xl:h-96 rounded-lg shadow-md object-cover"
         />
-        <div className="bg-black p-3 px-5 w-max rounded-3xl -mt-5 shadow-2xl">
-          <p className="text-[#37c7da] font-bold">{timestamp}</p>
+
+        {/* Timestamp */}
+        <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-3 px-5 w-max rounded-full -mt-6 shadow-xl">
+          <p className="text-white font-semibold text-sm">{timestamp}</p>
         </div>
       </div>
     </div>
+
   );
 };
 
 const Transactions = () => {
-
-  const { ethereum } = window;
-
-  const createEthereumContract = () => {
-    const provider = new ethers.providers.Web3Provider(ethereum);
-    const signer = provider.getSigner();
-    const transactionsContract = new ethers.Contract(contractAddress, contractABI, signer);
-  
-    return transactionsContract;
-  };
-  
-
-  const [currentAccount, setCurrentAccount] = useState("");
-
-  const [transactions, setTransactions] = useState([]);
-
-  const getAllTransactions = async () => {
-    try {
-      if (ethereum) {
-        const transactionsContract = createEthereumContract();
-
-        const availableTransactions = await transactionsContract.getAllTransactions();
-
-        const structuredTransactions = availableTransactions.map((transaction) => ({
-          addressTo: transaction.receiver,
-          addressFrom: transaction.sender,
-          timestamp: new Date(transaction.timestamp.toNumber() * 1000).toLocaleString(),
-          message: transaction.message,
-          keyword: transaction.keyword,
-          amount: parseInt(transaction.amount._hex) / (10 ** 18)
-        }));
-
-        console.log(structuredTransactions);
-
-        setTransactions(structuredTransactions);
-      } else {
-        console.log("Ethereum is not present");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { transactions, currentAccount } = useContext(TransactionContext);
 
   return (
     <div className="flex w-full justify-center items-center 2xl:px-20 gradient-bg-transactions">
