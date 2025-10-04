@@ -24,7 +24,7 @@ const Navbar = () => {
                     { title: "Etherscan", path: "https://etherscan.io/" },
                     { title: "Market", path: "https://www.coingecko.com/" },
                     { title: "Crypto News", path: "https://www.coindesk.com/" },
-                    { title: "Portfolio", path: "https://swarup-chanda.vercel.app/" },
+                    { title: "Portfolio", path: "https://Himanshu123.vercel.app/" },
                 ].map((item, index) => (
                     <NavBarItem key={item.title + index} title={item.title} path={item.path} />
                 ))}
@@ -59,7 +59,7 @@ const Navbar = () => {
                             { title: "Etherscan", path: "https://etherscan.io/" },
                             { title: "Market", path: "https://www.coingecko.com/" },
                             { title: "Crypto News", path: "https://www.coindesk.com/" },
-                            { title: "Portfolio", path: "https://swarup-chanda.vercel.app/" },
+                            { title: "Portfolio", path: "https://Himanshu12.vercel.app/" },
                         ].map((item, index) => (
                             <NavBarItem key={item.title + index} title={item.title} path={item.path} classprops="my-2 text-lg" />
                         ))}
