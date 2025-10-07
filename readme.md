@@ -47,7 +47,7 @@ Follow these steps to set up the project on your local system:
 
 🌐 Live Demo
 
-Check out the live demo: https://krypto-pi.vercel.app/
+<!--Check out the live demo: https://krypto-pi.vercel.app/-->
 
 ✨ Acknowledgments
 
