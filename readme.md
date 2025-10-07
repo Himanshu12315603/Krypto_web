@@ -42,8 +42,8 @@ Follow these steps to set up the project on your local system:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/krypt-blockchain-app.git
-   cd krypt-blockchain-app
+   git clone https://github.com/Himanshu12315603/Krypto_web.git
+   cd krypt
 
 🌐 Live Demo
 
